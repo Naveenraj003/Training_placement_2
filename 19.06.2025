@@ -1,0 +1,228 @@
+// Program 1: Hello World
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+// Program 2: Sum of two numbers
+class Sum {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        System.out.println("Sum: " + (a + b));
+    }
+}
+
+// Program 3: Check Even or Odd
+class EvenOdd {
+    public static void main(String[] args) {
+        int num = 7;
+        if(num % 2 == 0)
+            System.out.println("Even");
+        else
+            System.out.println("Odd");
+    }
+}
+
+// Program 4: Factorial of a number
+class Factorial {
+    public static void main(String[] args) {
+        int n = 5, fact = 1;
+        for(int i = 1; i <= n; i++)
+            fact *= i;
+        System.out.println("Factorial: " + fact);
+    }
+}
+
+// Program 5: Reverse a string
+class ReverseString {
+    public static void main(String[] args) {
+        String str = "Java", rev = "";
+        for(int i = str.length() - 1; i >= 0; i--)
+            rev += str.charAt(i);
+        System.out.println("Reversed: " + rev);
+    }
+}
+
+// Program 6: Fibonacci series
+class Fibonacci {
+    public static void main(String[] args) {
+        int a = 0, b = 1, c;
+        System.out.print(a + " " + b + " ");
+        for(int i = 2; i < 10; i++) {
+            c = a + b;
+            System.out.print(c + " ");
+            a = b;
+            b = c;
+        }
+    }
+}
+
+// Program 7: Palindrome number
+class Palindrome {
+    public static void main(String[] args) {
+        int num = 121, rev = 0, temp = num;
+        while(temp != 0) {
+            rev = rev * 10 + temp % 10;
+            temp /= 10;
+        }
+        if(num == rev)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+
+// Program 8: Prime number check
+class PrimeCheck {
+    public static void main(String[] args) {
+        int num = 17, flag = 0;
+        for(int i = 2; i <= num / 2; i++) {
+            if(num % i == 0) {
+                flag = 1;
+                break;
+            }
+        }
+        if(flag == 0)
+            System.out.println("Prime");
+        else
+            System.out.println("Not Prime");
+    }
+}
+
+// Program 9: Swap two numbers
+class Swap {
+    public static void main(String[] args) {
+        int a = 5, b = 10, temp;
+        temp = a;
+        a = b;
+        b = temp;
+        System.out.println("a=" + a + " b=" + b);
+    }
+}
+
+// Program 10: Multiplication table
+class Table {
+    public static void main(String[] args) {
+        int n = 5;
+        for(int i = 1; i <= 10; i++)
+            System.out.println(n + " * " + i + " = " + (n * i));
+    }
+}
+
+// Program 11: Sum of digits
+class SumOfDigits {
+    public static void main(String[] args) {
+        int num = 1234, sum = 0;
+        while(num != 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        System.out.println("Sum of digits: " + sum);
+    }
+}
+
+// Program 12: Armstrong number
+class Armstrong {
+    public static void main(String[] args) {
+        int num = 153, sum = 0, temp = num;
+        while(temp != 0) {
+            int digit = temp % 10;
+            sum += digit * digit * digit;
+            temp /= 10;
+        }
+        if(sum == num)
+            System.out.println("Armstrong");
+        else
+            System.out.println("Not Armstrong");
+    }
+}
+
+// Program 13: Greatest of three numbers
+class Greatest {
+    public static void main(String[] args) {
+        int a = 10, b = 25, c = 15;
+        if(a >= b && a >= c)
+            System.out.println("Greatest: " + a);
+        else if(b >= a && b >= c)
+            System.out.println("Greatest: " + b);
+        else
+            System.out.println("Greatest: " + c);
+    }
+}
+
+// Program 14: Count digits in a number
+class CountDigits {
+    public static void main(String[] args) {
+        int num = 12345, count = 0;
+        while(num != 0) {
+            num /= 10;
+            count++;
+        }
+        System.out.println("Digits: " + count);
+    }
+}
+
+// Program 15: Simple calculator
+class Calculator {
+    public static void main(String[] args) {
+        int a = 20, b = 10;
+        System.out.println("Add: " + (a + b));
+        System.out.println("Sub: " + (a - b));
+        System.out.println("Mul: " + (a * b));
+        System.out.println("Div: " + (a / b));
+    }
+}
+
+// Program 16: Leap year check
+class LeapYear {
+    public static void main(String[] args) {
+        int year = 2024;
+        if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+            System.out.println("Leap Year");
+        else
+            System.out.println("Not Leap Year");
+    }
+}
+
+// Program 17: Check character is vowel or consonant
+class VowelCheck {
+    public static void main(String[] args) {
+        char ch = 'e';
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+            System.out.println("Vowel");
+        else
+            System.out.println("Consonant");
+    }
+}
+
+// Program 18: ASCII value of a character
+class ASCII {
+    public static void main(String[] args) {
+        char ch = 'A';
+        int ascii = ch;
+        System.out.println("ASCII: " + ascii);
+    }
+}
+
+// Program 19: Area of circle
+class AreaCircle {
+    public static void main(String[] args) {
+        double r = 7.0;
+        double area = 3.1416 * r * r;
+        System.out.println("Area: " + area);
+    }
+}
+
+// Program 20: GCD of two numbers
+class GCD {
+    public static void main(String[] args) {
+        int a = 48, b = 18;
+        while(b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        System.out.println("GCD: " + a);
+    }
+}
