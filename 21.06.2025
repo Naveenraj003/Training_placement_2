@@ -1,0 +1,297 @@
+1. Hello World
+
+
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+2. Check Even or Odd
+
+
+
+public class EvenOdd {
+    public static void main(String[] args) {
+        int num = 7;
+        System.out.println(num % 2 == 0 ? "Even" : "Odd");
+    }
+}
+
+3. Find Largest of 3 Numbers
+
+
+
+public class Largest {
+    public static void main(String[] args) {
+        int a = 10, b = 20, c = 15;
+        int max = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
+        System.out.println("Largest: " + max);
+    }
+}
+
+4. Check Prime Number
+
+
+
+public class PrimeCheck {
+    public static void main(String[] args) {
+        int num = 17;
+        boolean isPrime = true;
+        for(int i = 2; i <= num/2; i++)
+            if(num % i == 0) isPrime = false;
+        System.out.println(num + (isPrime ? " is Prime" : " is Not Prime"));
+    }
+}
+
+5. Factorial Using Loop
+
+
+
+public class Factorial {
+    public static void main(String[] args) {
+        int n = 5, fact = 1;
+        for(int i = 1; i <= n; i++) fact *= i;
+        System.out.println("Factorial: " + fact);
+    }
+}
+
+
+---
+
+🔁 Looping and Patterns
+
+6. Print Multiplication Table
+
+
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        int num = 7;
+        for(int i = 1; i <= 10; i++)
+            System.out.println(num + " x " + i + " = " + (num*i));
+    }
+}
+
+7. Fibonacci Series
+
+
+
+public class Fibonacci {
+    public static void main(String[] args) {
+        int a = 0, b = 1, c, n = 10;
+        System.out.print(a + " " + b + " ");
+        for(int i = 2; i < n; i++) {
+            c = a + b;
+            System.out.print(c + " ");
+            a = b;
+            b = c;
+        }
+    }
+}
+
+8. Pattern - Star Triangle
+
+
+
+public class StarPattern {
+    public static void main(String[] args) {
+        int rows = 5;
+        for(int i=1; i<=rows; i++) {
+            for(int j=1; j<=i; j++)
+                System.out.print("* ");
+            System.out.println();
+        }
+    }
+}
+
+9. Palindrome Check
+
+
+
+public class Palindrome {
+    public static void main(String[] args) {
+        int num = 121, rev = 0, temp = num;
+        while(temp != 0) {
+            rev = rev * 10 + temp % 10;
+            temp /= 10;
+        }
+        System.out.println(num + (num == rev ? " is Palindrome" : " is Not Palindrome"));
+    }
+}
+
+10. Armstrong Number Check
+
+
+
+public class Armstrong {
+    public static void main(String[] args) {
+        int num = 153, sum = 0, temp = num;
+        while(temp != 0) {
+            int digit = temp % 10;
+            sum += digit * digit * digit;
+            temp /= 10;
+        }
+        System.out.println(num + (num == sum ? " is Armstrong" : " is Not Armstrong"));
+    }
+}
+
+
+---
+
+📚 String Programs
+
+11. Reverse a String
+
+
+
+public class ReverseString {
+    public static void main(String[] args) {
+        String str = "hello";
+        StringBuilder rev = new StringBuilder(str).reverse();
+        System.out.println("Reversed: " + rev);
+    }
+}
+
+12. Check String Palindrome
+
+
+
+public class StringPalindrome {
+    public static void main(String[] args) {
+        String str = "madam";
+        String rev = new StringBuilder(str).reverse().toString();
+        System.out.println(str + (str.equals(rev) ? " is Palindrome" : " is Not Palindrome"));
+    }
+}
+
+13. Count Vowels and Consonants
+
+
+
+public class VowelConsonant {
+    public static void main(String[] args) {
+        String str = "hello world";
+        int v = 0, c = 0;
+        for(char ch : str.toLowerCase().toCharArray()) {
+            if("aeiou".indexOf(ch) != -1) v++;
+            else if(Character.isLetter(ch)) c++;
+        }
+        System.out.println("Vowels: " + v + ", Consonants: " + c);
+    }
+}
+
+14. Remove Duplicates from String
+
+
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        String input = "programming";
+        StringBuilder result = new StringBuilder();
+        for(char ch : input.toCharArray())
+            if(result.indexOf(String.valueOf(ch)) == -1)
+                result.append(ch);
+        System.out.println("Without Duplicates: " + result);
+    }
+}
+
+15. Frequency of Characters in String
+
+
+
+public class CharFrequency {
+    public static void main(String[] args) {
+        String str = "hello";
+        int[] freq = new int[256];
+        for(char ch : str.toCharArray()) freq[ch]++;
+        for(char ch : str.toCharArray())
+            if(freq[ch] != 0) {
+                System.out.println(ch + " = " + freq[ch]);
+                freq[ch] = 0;
+            }
+    }
+}
+
+
+---
+
+💡 Array Programs
+
+16. Find Largest Element in Array
+
+
+
+public class MaxArray {
+    public static void main(String[] args) {
+        int[] arr = {3, 6, 1, 9, 2};
+        int max = arr[0];
+        for(int n : arr)
+            if(n > max) max = n;
+        System.out.println("Max: " + max);
+    }
+}
+
+17. Sort Array in Ascending Order
+
+
+
+import java.util.Arrays;
+
+public class SortArray {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 8, 1};
+        Arrays.sort(arr);
+        System.out.println("Sorted: " + Arrays.toString(arr));
+    }
+}
+
+18. Search Element in Array
+
+
+
+public class SearchElement {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40};
+        int key = 30, found = -1;
+        for(int i=0; i<arr.length; i++)
+            if(arr[i] == key) found = i;
+        System.out.println(found != -1 ? "Found at index " + found : "Not found");
+    }
+}
+
+19. Matrix Addition
+
+
+
+public class MatrixAdd {
+    public static void main(String[] args) {
+        int[][] a = {{1,2}, {3,4}}, b = {{5,6}, {7,8}}, sum = new int[2][2];
+        for(int i=0; i<2; i++)
+            for(int j=0; j<2; j++)
+                sum[i][j] = a[i][j] + b[i][j];
+        for(int[] row : sum) {
+            for(int val : row) System.out.print(val + " ");
+            System.out.println();
+        }
+    }
+}
+
+20. Transpose of a Matrix
+
+
+
+public class TransposeMatrix {
+    public static void main(String[] args) {
+        int[][] matrix = {{1, 2}, {3, 4}};
+        int[][] transposed = new int[2][2];
+        for(int i=0; i<2; i++)
+            for(int j=0; j<2; j++)
+                transposed[j][i] = matrix[i][j];
+        for(int[] row : transposed) {
+            for(int val : row) System.out.print(val + " ");
+            System.out.println();
+        }
+    }
+}
