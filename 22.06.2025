@@ -1,0 +1,292 @@
+public class SumOfDigits {
+    static int sumDigits(int n) {
+        if (n == 0) return 0;
+        return n % 10 + sumDigits(n / 10);
+    }
+    public static void main(String[] args) {
+        System.out.println("Sum: " + sumDigits(1234));
+    }
+}
+
+2. GCD of Two Numbers (Recursion)
+
+
+
+public class GCD {
+    static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+    public static void main(String[] args) {
+        System.out.println("GCD: " + gcd(36, 60));
+    }
+}
+
+3. Binary to Decimal
+
+
+
+public class BinaryToDecimal {
+    public static void main(String[] args) {
+        String binary = "1010";
+        int decimal = Integer.parseInt(binary, 2);
+        System.out.println("Decimal: " + decimal);
+    }
+}
+
+4. Decimal to Binary
+
+
+
+public class DecimalToBinary {
+    public static void main(String[] args) {
+        int num = 10;
+        String binary = Integer.toBinaryString(num);
+        System.out.println("Binary: " + binary);
+    }
+}
+
+5. Leap Year Check
+
+
+
+public class LeapYear {
+    public static void main(String[] args) {
+        int year = 2024;
+        boolean leap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        System.out.println(year + (leap ? " is Leap Year" : " is Not Leap Year"));
+    }
+}
+
+
+---
+
+🧮 Math-based Programs
+
+6. Perfect Number Check
+
+
+
+public class PerfectNumber {
+    public static void main(String[] args) {
+        int num = 28, sum = 0;
+        for(int i = 1; i < num; i++)
+            if(num % i == 0) sum += i;
+        System.out.println(num + (sum == num ? " is Perfect Number" : " is Not"));
+    }
+}
+
+7. Count Number of Digits
+
+
+
+public class CountDigits {
+    public static void main(String[] args) {
+        int num = 123456;
+        int count = ("" + num).length();
+        System.out.println("Digits: " + count);
+    }
+}
+
+8. Power of a Number
+
+
+
+public class Power {
+    public static void main(String[] args) {
+        int base = 2, exp = 3;
+        System.out.println("Result: " + Math.pow(base, exp));
+    }
+}
+
+9. Sum of N Natural Numbers
+
+
+
+public class SumNatural {
+    public static void main(String[] args) {
+        int n = 100;
+        int sum = n * (n + 1) / 2;
+        System.out.println("Sum: " + sum);
+    }
+}
+
+10. Check for Armstrong Number (n-digit)
+
+
+
+public class ArmstrongNDigit {
+    public static void main(String[] args) {
+        int num = 9474, sum = 0, temp = num;
+        int digits = String.valueOf(num).length();
+        while(temp > 0) {
+            int d = temp % 10;
+            sum += Math.pow(d, digits);
+            temp /= 10;
+        }
+        System.out.println(num + (sum == num ? " is Armstrong" : " is Not"));
+    }
+}
+
+
+---
+
+📦 Object-Oriented Programs
+
+11. Class and Object Example
+
+
+
+class Car {
+    String model = "Tesla";
+    void display() {
+        System.out.println("Model: " + model);
+    }
+    public static void main(String[] args) {
+        Car c = new Car();
+        c.display();
+    }
+}
+
+12. Constructor Overloading
+
+
+
+class Student {
+    String name;
+    Student() { name = "Default"; }
+    Student(String n) { name = n; }
+    void show() { System.out.println("Name: " + name); }
+    public static void main(String[] args) {
+        new Student().show();
+        new Student("Naveen").show();
+    }
+}
+
+13. Method Overloading
+
+
+
+class Calculator {
+    int add(int a, int b) { return a + b; }
+    double add(double a, double b) { return a + b; }
+    public static void main(String[] args) {
+        Calculator c = new Calculator();
+        System.out.println(c.add(2, 3));
+        System.out.println(c.add(2.5, 3.2));
+    }
+}
+
+14. Inheritance Example
+
+
+
+class Animal {
+    void sound() { System.out.println("Animal sound"); }
+}
+class Dog extends Animal {
+    void sound() { System.out.println("Bark"); }
+}
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound();
+    }
+}
+
+15. Interface Example
+
+
+
+interface Shape {
+    double area();
+}
+class Circle implements Shape {
+    double radius = 5;
+    public double area() { return Math.PI * radius * radius; }
+    public static void main(String[] args) {
+        Shape s = new Circle();
+        System.out.println("Area: " + s.area());
+    }
+}
+
+
+---
+
+📁 File and Exception Handling
+
+16. Read File (text)
+
+
+
+import java.io.*;
+public class ReadFile {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new FileReader("file.txt"));
+        String line;
+        while((line = br.readLine()) != null)
+            System.out.println(line);
+        br.close();
+    }
+}
+
+17. Write to File
+
+
+
+import java.io.*;
+public class WriteFile {
+    public static void main(String[] args) throws Exception {
+        BufferedWriter bw = new BufferedWriter(new FileWriter("file.txt"));
+        bw.write("Hello Java File!");
+        bw.close();
+    }
+}
+
+18. Exception Handling Example
+
+
+
+public class TryCatch {
+    public static void main(String[] args) {
+        try {
+            int x = 5 / 0;
+        } catch(ArithmeticException e) {
+            System.out.println("Cannot divide by zero!");
+        }
+    }
+}
+
+
+---
+
+🧺 Collections and Utilities
+
+19. ArrayList Example
+
+
+
+import java.util.*;
+public class ListExample {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Java");
+        list.add("Python");
+        for(String s : list)
+            System.out.println(s);
+    }
+}
+
+20. HashMap Example
+
+
+
+import java.util.*;
+public class MapExample {
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("Math", 90);
+        map.put("Science", 95);
+        for(String key : map.keySet())
+            System.out.println(key + ": " + map.get(key));
+    }
+}
