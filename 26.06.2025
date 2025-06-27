@@ -1,0 +1,94 @@
+n = 17
+if n > 1:
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            print("Not Prime")
+            break
+    else:
+        print("Prime")
+else:
+    print("Not Prime")
+
+12. Armstrong Number
+
+
+
+n = 153
+digits = len(str(n))
+sum_ = sum(int(d) ** digits for d in str(n))
+print("Armstrong" if sum_ == n else "Not Armstrong")
+
+13. Sum of Digits (Recursion)
+
+
+
+def sum_digits(n):
+    return n if n < 10 else n % 10 + sum_digits(n // 10)
+
+print(sum_digits(1234))
+
+14. GCD of Two Numbers
+
+
+
+import math
+a, b = 36, 60
+print("GCD:", math.gcd(a, b))
+
+15. Binary to Decimal
+
+
+
+binary = "1010"
+decimal = int(binary, 2)
+print("Decimal:", decimal)
+
+
+---
+
+🟡 Lists & Arrays
+
+16. Find Largest Element in List
+
+
+
+arr = [3, 6, 1, 9, 2]
+print("Largest:", max(arr))
+
+17. Sort List
+
+
+
+arr = [5, 2, 8, 1]
+arr.sort()
+print("Sorted:", arr)
+
+18. Linear Search
+
+
+
+arr = [10, 20, 30, 40]
+key = 30
+if key in arr:
+    print("Found at index", arr.index(key))
+else:
+    print("Not found")
+
+19. Matrix Addition
+
+
+
+a = [[1,2],[3,4]]
+b = [[5,6],[7,8]]
+result = [[a[i][j]+b[i][j] for j in range(2)] for i in range(2)]
+for row in result:
+    print(row)
+
+20. Transpose of Matrix
+
+
+
+matrix = [[1,2],[3,4]]
+transpose = [list(row) for row in zip(*matrix)]
+for row in transpose:
+    print(row)
